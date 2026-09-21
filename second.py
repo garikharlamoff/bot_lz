@@ -35,7 +35,7 @@ logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("httpcore").setLevel(logging.ERROR)
 
 # ==== КОНФИГУРАЦИЯ ====
-TELEGRAM_TOKEN = "8710200833:AAHjr_6x86yRsh3pOKGZqS-PgVuP8OotRno"  # Вставьте сюда ваш токен
+TELEGRAM_TOKEN = ""  # Вставьте сюда ваш токен
 CITY = "Minsk"
 LOG_FILE = "bot_log.csv"
 
