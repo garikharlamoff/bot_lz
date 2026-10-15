@@ -13,7 +13,6 @@ from telegram.ext import (
     filters,
 )
 
-# ==== 0. Обиходные патчи / Логирование системное ====
 _original_async_init = httpx.AsyncClient.__init__
 _original_sync_init = httpx.Client.__init__
 
@@ -34,7 +33,6 @@ httpx.Client.__init__ = _patched_sync_init
 logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("httpcore").setLevel(logging.ERROR)
 
-# ==== КОНФИГУРАЦИЯ ====
 TELEGRAM_TOKEN = ""  # Вставьте сюда ваш токен
 CITY = "Minsk"
 LOG_FILE = "bot_log.csv"
@@ -102,7 +100,6 @@ def get_btc_price() -> str:
         return f"Ошибка получения курса BTC: {e}"
 
 
-# ==== ХЭНДЛЕРЫ ТЕЛЕГРАМ ====
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     keyboard = [["Погода", "Акции", "Валюта"]]
